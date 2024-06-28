@@ -1,50 +1,17 @@
-import { useState } from 'react'
-import Form from './components/Form'
-import Lists from './components/Lists'
+import { Link } from 'react-router-dom'
 
 function App() {
-  const initialTodos = localStorage.getItem('todos')
-    ? JSON.parse(localStorage.getItem('todos'))
-    : []
-  const [todos, setTodos] = useState(initialTodos)
-
-  const [newTodo, setNewTodo] = useState('')
-
-  const onSubmitHandler = (e) => {
-    e.preventDefault()
-
-    const newTodos = [
-      ...todos,
-      {
-        id: Date.now(),
-        title: newTodo,
-        completed: false,
-      },
-    ]
-
-    setTodos(newTodos)
-    localStorage.setItem('todos', JSON.stringify(newTodos))
-
-    setNewTodo('')
-  }
-
-  const handleRemoveAllClick = () => {
-    setTodos([])
-    localStorage.removeItem('todos')
-  }
-
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-blue-100">
-      <section className="w-full p-6 m-4 bg-white rounded shadow lg:w-3/4 lg:max-w-lg">
-        <article className="flex justify-between mb-3">
-          <h1 className="text-2xl">할 일 목록</h1>
-          <button type="button" onClick={() => handleRemoveAllClick()}>
-            Delete all
-          </button>
-        </article>
-        <Lists todos={todos} setTodos={setTodos} />
-        <Form onSubmitHandler={onSubmitHandler} newTodo={newTodo} setNewTodo={setNewTodo} />
-      </section>
+    <div className="flex flex-col items-center">
+      <h1 className="text-xl">메뉴</h1>
+      <ul className="m-3 p-5 text-xl border-t-2">
+        <li className="p-5 mb-5 border border-blue-200 hover:bg-blue-200 hover:text-white cursor-pointer rounded-2xl text-center">
+          <Link to="/todo">Todo 가기</Link>
+        </li>
+        <li className="p-5 border border-blue-200 hover:bg-blue-200 hover:text-white cursor-pointer rounded-2xl text-center">
+          <Link to="/netflix">Netflix 가기</Link>
+        </li>
+      </ul>
     </div>
   )
 }

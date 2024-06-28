@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
-import './App.css'
+import './App_class.css'
 
 export default class App extends Component {
-
   // x버튼 스타일
   btnStyle = {
     color: '#fff',
@@ -10,7 +9,7 @@ export default class App extends Component {
     padding: '5px 9px',
     borderRadius: '50%',
     cursor: 'pointer',
-    float: 'right'
+    float: 'right',
   }
 
   // 리스트 스타일링
@@ -18,7 +17,7 @@ export default class App extends Component {
     return {
       padding: '10px',
       borderBottom: '1px #ccc dotted',
-      textDecoration: completed ? 'line-through' : 'none'
+      textDecoration: completed ? 'line-through' : 'none',
     }
   }
 
@@ -28,12 +27,12 @@ export default class App extends Component {
       {
         id: '1',
         title: '공부하기',
-        completed: true
+        completed: true,
       },
       {
         id: '2',
         title: '청소하기',
-        completed: false
+        completed: false,
       },
     ],
     value: '',
@@ -41,7 +40,7 @@ export default class App extends Component {
 
   // 목록 지우기
   handleClick = (id) => {
-    let newTodoData = this.state.todoData.filter((todo) => todo.id !== id);
+    let newTodoData = this.state.todoData.filter((todo) => todo.id !== id)
     this.setState({ todoData: newTodoData })
   }
 
@@ -59,7 +58,7 @@ export default class App extends Component {
     let newTodo = {
       id: Date.now(),
       title: this.state.value,
-      completed: false
+      completed: false,
     }
 
     // state에 기존에 있는 값에 새로운 값 추가, 입력란에 있는 값 제거
@@ -86,17 +85,21 @@ export default class App extends Component {
           <div className="title">
             <h1>할 일 목록</h1>
           </div>
-          {
-            this.state.todoData.map((todo) => (
-              <div key={todo.id} style={this.getStyle(todo.completed)}>
-                <p>
-                  <input type="checkbox" defaultChecked={todo.completed} onClick={() => this.checkboxHandleClick(todo.id)} />
-                  {todo.title}
-                  <button style={this.btnStyle} onClick={() => this.handleClick(todo.id)}>x</button>
-                </p>
-              </div>
-            ))
-          }
+          {this.state.todoData.map((todo) => (
+            <div key={todo.id} style={this.getStyle(todo.completed)}>
+              <p>
+                <input
+                  type="checkbox"
+                  defaultChecked={todo.completed}
+                  onClick={() => this.checkboxHandleClick(todo.id)}
+                />
+                {todo.title}
+                <button style={this.btnStyle} onClick={() => this.handleClick(todo.id)}>
+                  x
+                </button>
+              </p>
+            </div>
+          ))}
           <form style={{ display: 'flex', marginTop: '10px' }} onSubmit={this.handleSubmit}>
             <input
               type="text"

@@ -57,7 +57,7 @@ function List({ todos, setTodos, todo, provided, snapshot }) {
           className="w-full flex  items-center justify-between"
           onSubmit={editTodoOnSubmitHandler}
         >
-          <label htmlFor="title" className={`${todo.completed && 'line-through'}`}>
+          <label className={`${todo.completed && 'line-through'}`}>
             <input
               type="text"
               className="border border-blue-400 bg-gray-100 rounded focus:bg-gray-50"
@@ -88,9 +88,8 @@ function List({ todos, setTodos, todo, provided, snapshot }) {
             text-gray-600 border rounded 
             ${snapshot.isDragging ? 'bg-gray-300' : 'bg-gray-100'}`}
     >
-      <label htmlFor="title" className={`${todo.completed && 'line-through'}`}>
+      <label className={`${todo.completed && 'line-through'}`}>
         <input
-          id="title"
           type="checkbox"
           className="mr-1"
           defaultChecked={todo.completed}
