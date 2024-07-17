@@ -1,10 +1,11 @@
 import axios from '../../api/axios'
 import { useEffect, useState } from 'react'
 import requests from '../../api/requests'
-// import './Banner.css'
+import './Banner.css'
 
 function Banner() {
   const [movie, setMovie] = useState([])
+  const [isPlayClicked, setIsPlayClicked] = useState(false)
 
   const fetchData = async () => {
     // 현재 상영중인 영화 정보를 가져오기(여러 영화)
@@ -31,35 +32,38 @@ function Banner() {
     return str?.length > n ? str.substr(0, n - 1) + '...' : str
   }
 
-  return (
-    <header
-      className="banner"
-      style={{
-        backgroundImage: `url(${process.env.REACT_APP_MOVIE_IMG_ENDPOINT}/original/${movie?.backdrop_path})`,
-        backgroundPosition: 'top center',
-        backgroundSize: 'cover',
-      }}
-    >
-      <div className="banner__contents">
-        {/* Title */}
-        <h1 className="banner__title">{movie.title || movie.name || movie.original_name}</h1>
+  if (!isPlayClicked) {
+    return (
+      <header
+        className="banner"
+        style={{
+          backgroundImage: `url(${process.env.REACT_APP_MOVIE_IMG_ENDPOINT}/original/${movie?.backdrop_path})`,
+          backgroundPosition: 'top center',
+          backgroundSize: 'cover',
+        }}
+      >
+        <div className="banner__contents">
+          {/* Title */}
+          <h1 className="banner__title">{movie.title || movie.name || movie.original_name}</h1>
 
-        <div className="banner__buttons">
-          <button className="banner__button play">Play</button>
-          <button className="banner__button info">
-            <div className="space">banner info space</div>
-            More Information
-          </button>
+          <div className="banner__buttons">
+            <button className="banner__button play" onClick={() => setIsPlayClicked(true)}>
+              Play
+            </button>
+            <button className="banner__button info">
+              <div className="space">banner info space</div>
+              More Information
+            </button>
+          </div>
+          {/* DIV > 2 BUTTONS */}
+          <h1 className="banner__description">{stringTruncate(movie.overview, 100)}</h1>
+          {/* Description */}
         </div>
-        {/* DIV > 2 BUTTONS */}
-        <h1 className="banner__description">
-          {movie?.overview}
-          {stringTruncate(movie?.overview, 100)}
-        </h1>
-        {/* Description */}
-      </div>
-      <div className="banner--fadeBottom" />
-    </header>
-  )
+        <div className="banner--fadeBottom" />
+      </header>
+    )
+  }
+
+  return <div>clicked</div>
 }
 export default Banner

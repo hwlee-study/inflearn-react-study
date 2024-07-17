@@ -39,7 +39,7 @@
 }
 .banner__contents {
   margin-left: 40px;
-  padding-top: 140px;
+  padding-top: 200px;
   height: 190px;
 }
 .banner__title {
@@ -57,7 +57,7 @@
   height: 80px;
 }
 .banner--fadeBottom {
-  height: 7.4rem;
+  height: 16.4rem;
   background-image: linear-gradient(180deg, transparent, rgba(37, 37, 37, 0.61), #111);
 }
 .banner__buttons {
