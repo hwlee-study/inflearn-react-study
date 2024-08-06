@@ -1,11 +1,13 @@
-import Banner from './Banner'
+import { Outlet } from 'react-router-dom'
+import Footer from './Footer'
 import Nav from './Nav'
 
 function Netflix() {
   return (
-    <div className="w-full h-full m-auto">
+    <div className="w-full h-100% m-auto bg-[#111]">
       <Nav />
-      <Banner />
+      <Outlet />
+      <Footer />
     </div>
   )
 }
