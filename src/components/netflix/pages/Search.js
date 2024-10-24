@@ -46,7 +46,7 @@ function Search() {
               <div className="movie" key={movie.id}>
                 <div
                   className="movie__column-poster"
-                  onClick={() => navigate(`/${movie.id}`)}
+                  onClick={() => navigate(`/netflix/${movie.id}`)}
                 >
                   <img
                     className="movie__poster"
