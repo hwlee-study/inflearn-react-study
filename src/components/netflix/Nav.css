@@ -8,7 +8,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* ANIMATION */
   transition-timing-function: ease-in;
   transition: all 0.5s;
 }
@@ -22,6 +21,19 @@
   left: 40px;
   width: 80px;
   object-fit: contain;
+  cursor: pointer;
+}
+
+.nav__input {
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  border: none;
+  margin-top: 2px;
 }
 
 .nav__avatar {
