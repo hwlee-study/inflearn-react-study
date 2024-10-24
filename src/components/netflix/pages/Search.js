@@ -38,22 +38,27 @@ function Search() {
 
   const searchRender = () => {
     return searchResults.length > 0 ? (
-      searchResults.map((movie) => (
-        <div className="movie__container">
-          <div className="movie" key={movie.id}>
-            <div
-              className="movie__column-poster"
-              onClick={() => navigate(`/${movie.id}`)}
-            >
-              <img
-                className="movie__poster"
-                src={`${process.env.REACT_APP_MOVIE_IMG_ENDPOINT}/w500/${movie.backdrop_path}`}
-                alt="movie"
-              />
-            </div>
-          </div>
-        </div>
-      ))
+      <div className="movie__container">
+        {searchResults.map((movie) => {
+          if (movie.backdrop_path !== null && movie.media_type !== 'persion') {
+            const movieImgUrl = `${process.env.REACT_APP_MOVIE_IMG_ENDPOINT}/w500/${movie.backdrop_path}`
+            return (
+              <div className="movie" key={movie.id}>
+                <div
+                  className="movie__column-poster"
+                  onClick={() => navigate(`/${movie.id}`)}
+                >
+                  <img
+                    className="movie__poster"
+                    src={movieImgUrl}
+                    alt="movie"
+                  />
+                </div>
+              </div>
+            )
+          }
+        })}
+      </div>
     ) : (
       <section className="no-results">
         <div className="no-results__text">
