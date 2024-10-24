@@ -57,18 +57,34 @@ function Footer() {
       <FooterLinkContainer>
         <h1 className="text-gray-500 text-lg">넷플릭스 대한민국</h1>
         <FooterLinkContent>
-          <FooterLink href="https://help.netflix.com/ko/node/412">넷플릭스 소개</FooterLink>
+          <FooterLink href="https://help.netflix.com/ko/node/412">
+            넷플릭스 소개
+          </FooterLink>
           <FooterLink href="https://help.netflix.com/ko">고객 센터</FooterLink>
-          <FooterLink href="https://help.netflix.com/ko/">미디어 센터</FooterLink>
-          <FooterLink href="https://help.netflix.com/legal/termsofuse">이용 약관</FooterLink>
-          <FooterLink href="https://help.netflix.com/legal/privacy">개인정보</FooterLink>
-          <FooterLink href="https://help.netflix.com/legal/corpinfo">회사정보</FooterLink>
-          <FooterLink href="https://help.netflix.com/ko/contactus">문의하기</FooterLink>
-          <FooterLink href="https://help.netflix.com/legal/notices">법적 고지</FooterLink>
+          <FooterLink href="https://help.netflix.com/ko/">
+            미디어 센터
+          </FooterLink>
+          <FooterLink href="https://help.netflix.com/legal/termsofuse">
+            이용 약관
+          </FooterLink>
+          <FooterLink href="https://help.netflix.com/legal/privacy">
+            개인정보
+          </FooterLink>
+          <FooterLink href="https://help.netflix.com/legal/corpinfo">
+            회사정보
+          </FooterLink>
+          <FooterLink href="https://help.netflix.com/ko/contactus">
+            문의하기
+          </FooterLink>
+          <FooterLink href="https://help.netflix.com/legal/notices">
+            법적 고지
+          </FooterLink>
         </FooterLinkContent>
       </FooterLinkContainer>
       <div className="w-[500px] mt-[30px] md:mt-5">
-        <h2 className="text-white text-sm text-center">Netflix RIGHTS RESERVED.</h2>
+        <h2 className="text-white text-sm text-center">
+          Netflix RIGHTS RESERVED.
+        </h2>
       </div>
     </FooterContainer>
   )
