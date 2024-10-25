@@ -79,6 +79,7 @@ h2 {
   max-height: 144px;
   margin-right: 10px;
   transition: transform 450ms;
+  cursor: pointer;
 }
 .row__poster:hover {
   transform: scale(1.08);

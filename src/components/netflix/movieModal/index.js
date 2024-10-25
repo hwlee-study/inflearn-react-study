@@ -1,4 +1,6 @@
+import { useRef } from 'react'
 import './MovieModal.css'
+import useOnClickOutSide from '../../../hooks/useOnClickOutSide'
 
 function MovieModal({
   backdrop_path,
@@ -10,10 +12,16 @@ function MovieModal({
   vote_average,
   setModalOpen,
 }) {
+  const modalRef = useRef()
+
+  useOnClickOutSide(modalRef, () => {
+    setModalOpen(false)
+  })
+
   return (
     <div className="presentation">
       <div className="wrapper-modal">
-        <div className="modal">
+        <div className="modal" ref={modalRef}>
           <span className="modal-close" onClick={() => setModalOpen(false)}>
             X
           </span>
