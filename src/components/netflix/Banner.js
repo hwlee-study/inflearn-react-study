@@ -13,7 +13,10 @@ function Banner() {
     const request = await axios.get(requests.fetchNowPlaying)
 
     //여러영화 중 하나의 영화 ID 가져오기
-    const movieId = request.data.results[Math.floor(Math.random() * request.data.results.length)].id
+    const movieId =
+      request.data.results[
+        Math.floor(Math.random() * request.data.results.length)
+      ].id
 
     //특정 영화의 더 상세한 정보 가져오기(비디오 정보 포함)
     const { data: movieDetail } = await axios.get(`/movie/${movieId}`, {
@@ -44,10 +47,15 @@ function Banner() {
       >
         <div className="banner__contents">
           {/* Title */}
-          <h1 className="banner__title">{movie.title || movie.name || movie.original_name}</h1>
+          <h1 className="banner__title">
+            {movie.title || movie.name || movie.original_name}
+          </h1>
 
           <div className="banner__buttons">
-            <button className="banner__button play" onClick={() => setIsPlayClicked(true)}>
+            <button
+              className="banner__button play"
+              onClick={() => setIsPlayClicked(true)}
+            >
               Play
             </button>
             <button className="banner__button info">
@@ -56,7 +64,9 @@ function Banner() {
             </button>
           </div>
           {/* DIV > 2 BUTTONS */}
-          <h1 className="banner__description">{stringTruncate(movie.overview, 100)}</h1>
+          <h1 className="banner__description">
+            {stringTruncate(movie.overview, 100)}
+          </h1>
           {/* Description */}
         </div>
         <div className="banner--fadeBottom" />
@@ -101,7 +111,6 @@ function Banner() {
         <Iframe
           width="640"
           height="360"
-          // src="https://www.youtube.com/embed/7B5UwngqBGg?si=MZ_ZReHJWIgJRGxy"
           src={`https://www.youtube.com/embed/${movie.videos.results[0].key}?controls=0&autoplay=1&loop=1&mute=1&playlist=${movie.videos.results[0].key}`}
           title="YouTube video player"
           frameborder="0"
