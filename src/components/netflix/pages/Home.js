@@ -1,12 +1,13 @@
 import requests from '../../../api/requests'
 import Banner from '../Banner'
 import Row from '../Row'
+import SwiperRow from '../SwiperRow'
 
 function Home() {
   return (
     <>
       <Banner />
-      <Row
+      <SwiperRow
         title="NETFLIX ORIGINALS"
         id="NO"
         fetchUrl={requests.fetchNetflixOriginals}
