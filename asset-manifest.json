@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/github.io/inflearn-react-study/static/css/main.a0d21bec.css",
+    "main.js": "/github.io/inflearn-react-study/static/js/main.86033266.js",
+    "static/js/453.cd4e7376.chunk.js": "/github.io/inflearn-react-study/static/js/453.cd4e7376.chunk.js",
+    "index.html": "/github.io/inflearn-react-study/index.html",
+    "main.a0d21bec.css.map": "/github.io/inflearn-react-study/static/css/main.a0d21bec.css.map",
+    "main.86033266.js.map": "/github.io/inflearn-react-study/static/js/main.86033266.js.map",
+    "453.cd4e7376.chunk.js.map": "/github.io/inflearn-react-study/static/js/453.cd4e7376.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a0d21bec.css",
+    "static/js/main.86033266.js"
+  ]
+}
