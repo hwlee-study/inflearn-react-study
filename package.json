@@ -1,6 +1,7 @@
 {
   "name": "react-todo-app",
   "version": "0.1.0",
+  "homepage": "https://hwlee-study.github.io/inflearn-react-study/",
   "private": true,
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
@@ -22,7 +23,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +49,7 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@eslint/js": "^9.11.1",
     "eslint-plugin-react": "^7.37.0",
+    "gh-pages": "^6.2.0",
     "globals": "^15.9.0",
     "prettier": "^3.3.2",
     "tailwindcss": "^3.4.4"

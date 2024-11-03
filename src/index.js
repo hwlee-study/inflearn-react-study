@@ -5,7 +5,9 @@ import reportWebVitals from './reportWebVitals'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import { RouterInfo } from './util/router'
 
-const RouterObject = createBrowserRouter(RouterInfo)
+const RouterObject = createBrowserRouter(RouterInfo, {
+  basename: '/inflearn-react-study',
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
