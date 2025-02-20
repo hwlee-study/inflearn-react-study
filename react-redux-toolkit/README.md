@@ -126,7 +126,7 @@ ReactDOM.render(
 
 ## Redux State Slice → Reducer역할
 
-<img width="232" alt="Image" src="https://github.com/user-attachments/assets/95fcdaf7-c80f-4ba3-a06e-38fe64beb6cd" />(attachment:4a4327dd-c622-4ba3-a4ed-7083510bc5f2:스크린샷*2025-02-19*오후\_11.44.36.png)
+<img width="232" alt="Image" src="https://github.com/user-attachments/assets/95fcdaf7-c80f-4ba3-a06e-38fe64beb6cd" />
 
 - `react-redux`의 `createSlice API`를 이용하여 state값을 변경한다.
 - 필수 요소
